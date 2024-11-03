@@ -1,4 +1,4 @@
-
+from api.banco import identificar_veiculo_api
 from menuFeedbacks import menu_feedbacks
 from menuOrcamentos import menu_orcamentos
 from menuManutencao import menu_manutencao
@@ -18,7 +18,8 @@ def menu_principal():
         print("5. Gerenciar Manutenção")
         print("6. Gerenciar Orçamentos")
         print("7. Gerenciar Feedbacks")
-        print("8. Sair")
+        print("8. Consulta na API Sinesp")
+        print("9. Sair")
         
         escolha = input("Escolha uma opção (1-8): ")
 
@@ -37,10 +38,22 @@ def menu_principal():
         elif escolha == '7':
             menu_feedbacks()
         elif escolha == '8':
+            placa = input("Digite a placa do veículo para consulta: ")
+            try:
+                dados_veiculo = identificar_veiculo_api(placa)
+                print("===== Dados do Veículo =====")
+                print(f"Modelo: {dados_veiculo.get('modelo')}")
+                print(f"Marca: {dados_veiculo.get('marca')}")
+                print(f"Ano: {dados_veiculo.get('ano')}")
+                print(f"Cor: {dados_veiculo.get('cor')}")
+                print(f"Placa: {dados_veiculo.get('placa')}")
+            except Exception as e:
+                print(f"Erro ao consultar veículo: {e}")
+        elif escolha == '9':
             print("Saindo...")
             break
-        else:
-            print("Opção inválida. Tente novamente.")
+
+#Comentário: ao escolher a opção 8 do menu, o usuário consegur fazer um teste da api no sistema. Sem precisar apenas testar pelo endpoint criado.     
 
 
 if __name__ == "__main__":

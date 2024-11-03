@@ -1,8 +1,8 @@
 from matplotlib.pyplot import get
 from numpy import long
 import oracledb
-import configurations
 import requests
+import configurations
 
 
 def get_conexao():
@@ -10,6 +10,7 @@ def get_conexao():
                             dsn=configurations.DB_DSN)
 
 
+#passar placa do automóvel
 def identificar_veiculo_api(placa):
     payload = {
         "placa": placa,

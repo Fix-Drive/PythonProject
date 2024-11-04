@@ -134,7 +134,7 @@ def atualizar_automovel():
         novo_valor = int(input("Novo ano: "))
     elif opcao == "7":
         campo == "cd_chassi"
-        novo_valor == int(input("Novo número de chassi: "))
+        novo_valor == input("Novo número de chassi: ")
     elif opcao == "8":
         campo == "cd_renavam"
         novo_valor == int(input("Novo código renavam: "))

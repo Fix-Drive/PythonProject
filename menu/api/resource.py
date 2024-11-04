@@ -2,7 +2,10 @@ from flask import Flask, jsonify, request
 
 from banco import identificar_veiculo_api
 
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/identificar_veiculo', methods=['POST'])
 def identificar_veiculo():

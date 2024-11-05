@@ -57,7 +57,7 @@ def criar_automoveis():
     placa = input("Placa do automóvel: ")
     tipo = input("Tipo de automóvel: ")
     marca = input("Marca: ")
-    modelo = input("Modelo")
+    modelo = input("Modelo: ")
     porte = input("Porte: ")
     ano = input("Ano de fabricação: ")
     chassi = input("Número de chassi: ")

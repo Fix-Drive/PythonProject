@@ -20,13 +20,13 @@ def get_conexao():
 def identificar_veiculo_api(placa):
     payload = {
         "placa": placa,
-        "login_cpf": configurations.SINESP_LOGIN,
-        "login_senha": configurations.SINESP_PASSWORD,
-        "token": configurations.SINESP_TOKEN,
+        "login_cpf": SINESP_LOGIN,
+        "login_senha": SINESP_PASSWORD,
+        "token": SINESP_TOKEN,
         "timeout": 300
     }
 
-    response = requests.post(configurations.SINESP_URL, json=payload)
+    response = requests.post(SINESP_URL, json=payload)
     response_json = response.json()
     response.close()
 
